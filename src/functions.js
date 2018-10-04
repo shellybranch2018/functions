@@ -65,10 +65,8 @@ console.log(collection);
 // EX: indexOf([1, 2, 3], 2) --> 1
 // EX: indexOf([10, 20, 30], 5) --> 0
 let indexOf = (array, target) => {
-for (var i = 0; i < array.length; i++) {  
-console.log(array.charAt(i));
-}
-};
+console.log(array.findIndex(k => k==target));
+};indexOf([1,2,3],5)
 
 
 // Return all elements of an array that pass a truth test.
