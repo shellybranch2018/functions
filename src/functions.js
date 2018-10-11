@@ -108,17 +108,15 @@ let uniq = (array) => {
 // map({firstName: 'Kayla', lastName: 'Handy', age: 29}, (item) => {
 //    return item[key]
 // }) --> ['Kayla', 'Handy', 29]
-let map = (collection, iterator) => {
-  const map1 = collection.map(collection => collection);
-map1.forEach(myFunction);
 
-function myFunction (item, index) {
 
-  for( var key in item ) {
-    console.log(item[key])
-  }
+let map = (collection) => {
+  let myPerson = (collection.map(collection => collection));
+  for(var i = 0; i < myPerson.length; i++) {
+
+  console.log(myPerson[i].firstName + myPerson[i].lastName + myPerson[i].age)
 }
-};map([{firstName: 'Kayla', lastName: 'Handy', age: 29}])
+};map([{firstName: 'Kayla', lastName: 'Handy', age: 29}]);
 
 // Reduces an array or object to a single value by repetitively calling
 // iterator(accumulator, item) for each item. accumulator should be
