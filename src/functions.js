@@ -1,8 +1,8 @@
 // Returns whatever value is passed as the argument.
 //
 // EX: identity(6) --> 6
-let identity = (x,y) => {
-    return x * y;
+let identity = (x) => {
+    return x;
 };
 
 // Return an array of the first n elements of an array. If n is undefined,
@@ -17,14 +17,15 @@ var numArray1 = array;
 var secondNumber = n;
 
 if (n==undefined){
-console.log(numArray1.splice(0,1),secondNumber);
+return numArray1[0];
 }
 
 
-else { console.log(numArray1.splice(0,2),secondNumber);}
+else { return numArray1.splice(0,n);}
 
 
-}
+};
+
 
 // Like first, but for the last elements. If n is undefined, return just the
 // last element.
@@ -33,20 +34,14 @@ else { console.log(numArray1.splice(0,2),secondNumber);}
 // EX: last([10, 34, 68, 19]) --> 19
 let last = (array, n) => {
 
-var numArray1 = array;
-
-var secondNumber = n;
-
 if (n==undefined){
-console.log(numArray1.splice(5,5),secondNumber);
+return array.slice(-1);
 }
 
+else { return array.slice(array.length - n;}
 
-else { console.log(numArray1.splice(0,2),secondNumber);}
-
-
-}
-
+};
+//last([10, 34, 68, 19])
 // Call iterator(value, key, collection) for each element of collection.
 // Accepts both arrays and objects.
 //
@@ -108,15 +103,17 @@ let uniq = (array) => {
 // map({firstName: 'Kayla', lastName: 'Handy', age: 29}, (item) => {
 //    return item[key]
 // }) --> ['Kayla', 'Handy', 29]
+let map = (collection, iterator) => {
+  const map1 = collection.map(collection => collection);
+map1.forEach(myFunction);
 
+function myFunction (item, index) {
 
-let map = (collection) => {
-  let myPerson = (collection.map(collection => collection));
-  for(var i = 0; i < myPerson.length; i++) {
-
-  console.log(myPerson[i].firstName + myPerson[i].lastName + myPerson[i].age)
+  for( var key in item ) {
+    console.log(item[key])
+  }
 }
-};map([{firstName: 'Kayla', lastName: 'Handy', age: 29}]);
+};map([{firstName: 'Kayla', lastName: 'Handy', age: 29}])
 
 // Reduces an array or object to a single value by repetitively calling
 // iterator(accumulator, item) for each item. accumulator should be
