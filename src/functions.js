@@ -92,9 +92,12 @@ if(result != test){
 //
 // EX: uniq([1, 1, 2, 2, 3, 4, 5]) --> [1, 2, 3, 4, 5]
 let uniq = (array) => {
-  console.log(array.slice());
-};uniq([1, 1, 2, 2, 3, 4, 5])
-
+ let result = Array.from(array) ;
+var numFilter = result.filter(function(item, index){
+	return result.indexOf(item) >= index;
+}); return numFilter
+  //console.log(array.slice());
+};console.log(uniq([1, 1, 2, 2, 3, 4, 5]))
 
 // Return the results of applying an iterator to each element.
 // map() works a lot like each(), but in addition to running the operation on all
